@@ -1,0 +1,47 @@
+.box{
+
+    padding: 15px 15px;
+
+    background-color: purple;
+
+    border:2px solid white;
+
+    border-radius: 100px;
+
+    cursor: pointer;
+
+}
+
+.box1{
+
+    padding: 15px 15px;
+
+    background-color: blue;
+
+    border:2px solid white;
+
+    border-radius: 100px;
+
+    margin-left: 3px;
+
+    cursor: pointer;
+
+}
+
+.box2{
+
+    padding: 15px 15px;
+
+    background-color: green;
+
+    border:2px solid white;
+
+    border-radius: 100px;
+
+    margin-left: 3px;
+
+    margin-right: 6px;
+
+    cursor: pointer;
+
+}
