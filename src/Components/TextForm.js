@@ -14,7 +14,6 @@ export default function TextForm(props) {
         props.showAlert("Converted to Lower Case" , "success")
     } 
     const changeup =(event)=>{
-        console.log("on change this");
         setText(event.target.value)
     }
     const handlecopy = () =>{
@@ -27,6 +26,17 @@ export default function TextForm(props) {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
     }
+    const handleClear = () => {
+        var newText = '';
+        setText(newText);
+    }
+    const wordCount = () =>{
+        var word = text.split(" ");
+        if(word[0] === '')
+            return 0;
+        else
+            return word.length;
+    }
     const [text, setText] = useState("enter text here");
     return (
         <>
@@ -37,12 +47,13 @@ export default function TextForm(props) {
                 <button className="btn btn-primary my-3 " onClick = {convertup} id = "btn1">Convert to Uppercase</button>
                 <button className="btn btn-primary my-3 mx-1" onClick = {convertlo} id = "btn2">Convert to Lowercase</button>
                 <button className="btn btn-primary my-3 mx-1" onClick = {handlecopy} id = "btn2">Copy Text</button> 
-                <button className= "btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+                <button className= "btn btn-primary my-3 mx-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+                <button className= "btn btn-primary my-3 mx-1" onClick={handleClear}>Clear Text</button>
             </div>
         </div>
         <div className="container">
             <h2>Your text summary is: </h2>
-            <p>{text.split(" ").length} Words and {text.length} characters.</p>
+            <p>{wordCount()} Words and {text.length} characters.</p>
             <h2>Preview</h2>
             <p>{text}</p>
         </div>
