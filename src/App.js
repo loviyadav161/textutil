@@ -98,7 +98,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/">
-            <TextForm heading= "Enter text to analyze below" showAlert = {showAlert}/>
+            <TextForm heading= "Enter text to analyze below" showAlert = {showAlert}  />
           </Route>
       </Switch>
     </Router>

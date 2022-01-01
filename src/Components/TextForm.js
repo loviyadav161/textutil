@@ -2,13 +2,11 @@ import React ,{useState}from 'react'
 
 export default function TextForm(props) {
     const convertup = ()=>{
-        //console.log("upper is clicked");
         let newText = text.toUpperCase();
         setText(newText)
         props.showAlert("Converted to Upper Case" , "success")
     }
     const convertlo = ()=>{
-        //console.log("upper is clicked");
         let newText = text.toLowerCase();
         setText(newText)
         props.showAlert("Converted to Lower Case" , "success")
@@ -21,10 +19,12 @@ export default function TextForm(props) {
         text.select();
         text.setSelectionRange(0,99999);
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied Text" , "success")
     }
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Removed Extra Spaces" , "success")
     }
     const handleClear = () => {
         var newText = '';
